@@ -1,0 +1,3 @@
+CONNECTED meena
+meena ENROLL 0 1
+meena DROP 0 0

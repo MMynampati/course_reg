@@ -1,0 +1,32 @@
+==6025== Memcheck, a memory error detector
+==6025== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==6025== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==6025== Command: ./bin/zotReg_server 3200 rsrc/course_1.txt log.txt
+==6025== 
+rd_msgheader error (recv failed): Interrupted system call
+meena, 0, 0
+1, 1, 1, 1
+==6025== 
+==6025== HEAP SUMMARY:
+==6025==     in use at exit: 74 bytes in 4 blocks
+==6025==   total heap usage: 30 allocs, 26 frees, 23,166 bytes allocated
+==6025== 
+==6025== 34 bytes in 3 blocks are still reachable in loss record 1 of 2
+==6025==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6025==    by 0x10B2A5: populate_courses (helper.c:138)
+==6025==    by 0x10DBB9: main (server.c:571)
+==6025== 
+==6025== 40 bytes in 1 blocks are still reachable in loss record 2 of 2
+==6025==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6025==    by 0x10B77F: CreateList (dlinkedlist.c:26)
+==6025==    by 0x10D9F0: main (server.c:533)
+==6025== 
+==6025== LEAK SUMMARY:
+==6025==    definitely lost: 0 bytes in 0 blocks
+==6025==    indirectly lost: 0 bytes in 0 blocks
+==6025==      possibly lost: 0 bytes in 0 blocks
+==6025==    still reachable: 74 bytes in 4 blocks
+==6025==         suppressed: 0 bytes in 0 blocks
+==6025== 
+==6025== For lists of detected and suppressed errors, rerun with: -s
+==6025== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
